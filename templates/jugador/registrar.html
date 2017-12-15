@@ -1,0 +1,18 @@
+<!-- Pagina con el formulario para registrarse -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registrarse</title>
+</head>
+<body>
+	<!-- Formulario de registro -->
+	<form method="post">
+		{% csrf_token %}
+		<!-- Campo de nombre de usuario -->
+		{{ form.as_p }}
+		<!-- Boton para registrarse -->
+		<button type="submit">Registrarse</button>
+	</form>
+</body>
+</html>

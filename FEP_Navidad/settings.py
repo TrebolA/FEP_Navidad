@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from django.conf.global_settings import LOGIN_REDIRECT_URL, EMAIL_USE_TLS,\
+    EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_BACKEND,\
+    AUTH_USER_MODEL
+from django.core.urlresolvers import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.jugador',
+    'apps.juego',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -55,7 +61,7 @@ ROOT_URLCONF = 'FEP_Navidad.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,8 +82,12 @@ WSGI_APPLICATION = 'FEP_Navidad.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'navidad_fep',
+        'USER': 'postgres',
+        'PASSWORD': 'trebol',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 
@@ -120,3 +130,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,  'static')
+
+# URL a donde se dirigira el jugador cuando inicie sesion
+
+LOGIN_REDIRECT_URL = reverse_lazy('jugador:registrar')
+
+# Configuracion de envio de correos
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'info@paramopresenta.com'
+EMAIL_HOST_PASSWORD = 'bajofondo2004'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+AUTH_USER_MODEL = 'jugador.Datos'
