@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 from django.conf.global_settings import LOGIN_REDIRECT_URL, EMAIL_USE_TLS,\
     EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_BACKEND,\
-    AUTH_USER_MODEL
+    AUTH_USER_MODEL, STATICFILES_DIRS
 from django.core.urlresolvers import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.jugador',
     'apps.juego',
+    #'jugador',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -129,7 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,  'static')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # URL a donde se dirigira el jugador cuando inicie sesion
 

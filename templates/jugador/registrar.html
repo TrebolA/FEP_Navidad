@@ -1,11 +1,7 @@
 <!-- Pagina con el formulario para registrarse -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Registrarse</title>
-</head>
-<body>
+{% extends 'jugador/base.html' %}
+
+{% block content %}
 	<!-- Formulario de registro -->
 	<form method="post">
 		{% csrf_token %}
@@ -14,5 +10,4 @@
 		<!-- Boton para registrarse -->
 		<button type="submit">Registrarse</button>
 	</form>
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Navidad FEP</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/base_jugador.css' %}">
+</head>
+<body>
+	{% block content %}
+	{% endblock %}
+	<footer>
+		<img id="logo_paramo" src="{% static 'img/jugador/logo_paramo_blanco.png' %}">
+		<span id="redes_sociales">
+			<a href="https://www.facebook.com/paramopresenta/"><img class="red_social" src="{% static 'img/jugador/facebook.png' %}"></a>
+			<a href="https://www.instagram.com/paramopresenta/"><img class="red_social" src="{% static 'img/jugador/instagram.png' %}"></a>
+			<a href="https://twitter.com/ParamoPresenta"><img class="red_social" src="{% static 'img/jugador/twitter.png' %}"></a>
+		</span>
+		<button id="myBtn">Creditos</button>
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<!-- Modal content -->
+  			<div class="modal-content">
+    			<span class="close">&times;</span>
+    			<p>Some text in the Modal..</p>
+  			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="{% static 'js/base_jugador.js' %}"></script>
+</body>
+</html>

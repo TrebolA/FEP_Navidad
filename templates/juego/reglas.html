@@ -1,0 +1,14 @@
+<!-- Pagina de reglas -->
+{% extends 'jugador/base.html' %}
+{% load staticfiles %}
+{% block content %}
+	<span class="mySlides">asdfasdf</span>
+	<span class="mySlides">asdfasdf213123</span>
+	<span class="mySlides">asdfasdf223</span>
+	<span class="mySlides">asdfasdf2asd3</span>
+	<span class="mySlides">
+		<a href="{% url 'index' %}">Volver</a>
+	</span>
+	<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+	<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+{% endblock %}

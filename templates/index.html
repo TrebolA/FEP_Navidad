@@ -1,0 +1,9 @@
+<!-- Pagina con el formulario de inicio de sesion -->
+{% extends 'jugador/base.html' %}
+
+{% block content %}
+	<!-- Botones -->
+	<a href="{% url 'login' %}">Iniciar Sesion</a>
+	<a href="{% url 'jugador:registrar' %}">Registrarse</a>
+	<a href="{% url 'juego:reglas' %}">Reglas</a>
+{% endblock %}

@@ -1,19 +1,15 @@
 <!-- Pagina con el formulario de inicio de sesion -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>FEP NAVIDAD</title>
-</head>
-<body>
+{% extends 'jugador/base.html' %}
+
+{% block content %}
 	<!-- Formulario de inicio de sesion -->
 	<form method="post">
 		{% csrf_token %}
 		{{ form.as_p }}
 		<!-- link de olvide mi contraseña -->
+		<a href="{% url 'jugador:registrar' %}">Registrarse</a><br>
 		<a href="{% url 'password_reset' %}">Olvide mi contraseña</a><br>
 		<!-- boton para iniciar sesion -->
 		<input type="submit" name="Iniciar Sesion" placeholder="Iniciar Sesion"><br>
 	</form>
-</body>
-</html>
+{% endblock %}
