@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FEP</title>
+	<link rel="stylesheet" href="{% static 'css/base_jugador.css' %}">
+</head>
+<body onload="inicio()">
+	<div id="contenedor">
+		<div class="reloj" id="Horas">00</div>
+		<div class="reloj" id="Minutos">:00</div>
+		<div class="reloj" id="Segundos">:00</div>
+		<div class="reloj" id="Centesimas">:00</div>
+	</div>
+	<input type="text" id="respuesta">
+	<button id="btnValidar">Validar pista</button>
+	<form method="POST" class="post-form">{% csrf_token %}
+		<button type="submit" class="save btn btn-default" onclick="parar()">Terminar</button>
+	</form>
+	<script type="text/javascript" src="{% static 'js/juego.js' %}"></script>
+</body>
+</html>

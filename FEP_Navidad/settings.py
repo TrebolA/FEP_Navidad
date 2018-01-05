@@ -41,9 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.jugador',
-    'apps.juego',
-    #'jugador',
+    'juego',
+    'jugador',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -134,7 +133,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # URL a donde se dirigira el jugador cuando inicie sesion
 
-LOGIN_REDIRECT_URL = reverse_lazy('jugador:registrar')
+LOGIN_REDIRECT_URL = reverse_lazy('juego:inicioJuego')
 
 # Configuracion de envio de correos
 

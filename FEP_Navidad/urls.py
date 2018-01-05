@@ -19,15 +19,15 @@ from django.contrib.auth.views import login, password_reset, password_reset_done
     password_reset_confirm, password_reset_complete
 from django.conf.urls.static import static
 from django.conf import settings
-from apps.jugador.views import index
+from jugador.views import index
 
 urlpatterns = [
     # URL del sitio de administracion
     url(r'^admin/', admin.site.urls),
     # URL de la pagina principal de jugador
-    url(r'^jugador/', include('apps.jugador.urls', namespace='jugador')),
+    url(r'^jugador/', include('jugador.urls', namespace='jugador')),
     # URL de la pagina principal del juego
-    url(r'^juego/', include('apps.juego.urls', namespace='juego')),
+    url(r'^juego/', include('juego.urls', namespace='juego')),
     # Creamos la URL para el incio de sesion
     url(r'^login', login, {'template_name':'jugador/login.html'}, name='login'),
     # Creamos las URL para resetear la contrasenia
